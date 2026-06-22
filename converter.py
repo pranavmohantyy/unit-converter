@@ -31,3 +31,31 @@ def meters_to_miles(meters):
 
 def miles_to_meters(miles):
     return miles * 1609.34
+
+
+def kg_to_lbs(kg):
+    return kg * 2.20462
+
+def lbs_to_kg(lbs):
+    return lbs / 2.20462
+
+
+def kg_to_grams(kg):
+    return kg * 1000
+
+def grams_to_kg(grams):
+    return grams / 1000
+
+
+def kg_to_ounces(kg):
+    return kg * 35.274
+
+def ounces_to_kg(ounces):
+    return ounces / 35.274
+
+
+def stone_to_kg(stone):
+    return stone * 6.35029
+
+def kg_to_stone(kg):
+    return kg / 6.35029
