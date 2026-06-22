@@ -40,22 +40,22 @@ def lbs_to_kg(lbs):
     return lbs / 2.20462
 
 
-def celsius_to_fahrenheit(celsius):
-    return (celsius * 9/5) + 32
+def square_meters_to_acres(sqm):
+    return sqm * 0.000247105
 
-def fahrenheit_to_celsius(fahrenheit):
-    return (fahrenheit - 32) * 5/9
-
-
-def celsius_to_kelvin(celsius):
-    return celsius + 273.15
-
-def kelvin_to_celsius(kelvin):
-    return kelvin - 273.15
+def acres_to_square_meters(acres):
+    return acres / 0.000247105
 
 
-def fahrenheit_to_kelvin(fahrenheit):
-    return celsius_to_kelvin(fahrenheit_to_celsius(fahrenheit))
+def liters_to_gallons(liters):
+    return liters * 0.264172
 
-def kelvin_to_fahrenheit(kelvin):
-    return celsius_to_fahrenheit(kelvin_to_celsius(kelvin))
+def gallons_to_liters(gallons):
+    return gallons / 0.264172
+
+
+def cubic_meters_to_cubic_feet(cubic_meters):
+    return cubic_meters * 35.3147
+
+def cubic_feet_to_cubic_meters(cubic_feet):
+    return cubic_feet / 35.3147
