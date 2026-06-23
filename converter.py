@@ -40,22 +40,46 @@ def lbs_to_kg(lbs):
     return lbs / 2.20462
 
 
-def square_meters_to_acres(sqm):
-    return sqm * 0.000247105
+def convert_length(value, from_unit, to_unit):
+    if from_unit == 'meters':
+        if to_unit == 'feet':
+            return meters_to_feet(value)
+        elif to_unit == 'inches':
+            return meters_to_inches(value)
+        elif to_unit == 'cm':
+            return meters_to_cm(value)
+        elif to_unit == 'km':
+            return meters_to_km(value)
+        elif to_unit == 'miles':
+            return meters_to_miles(value)
+    elif from_unit == 'feet':
+        return feet_to_meters(value) if to_unit == 'meters' else None
+    elif from_unit == 'inches':
+        return inches_to_meters(value) if to_unit == 'meters' else None
+    elif from_unit == 'cm':
+        return cm_to_meters(value) if to_unit == 'meters' else None
+    elif from_unit == 'km':
+        return km_to_meters(value) if to_unit == 'meters' else None
+    elif from_unit == 'miles':
+        return miles_to_meters(value) if to_unit == 'meters' else None
 
-def acres_to_square_meters(acres):
-    return acres / 0.000247105
+
+def main():
+    import sys
+    if len(sys.argv) != 4:
+        print("Usage: python converter.py <category> <value> <from_unit> <to_unit>")
+        return
+    category = sys.argv[1]
+    value = float(sys.argv[2])
+    from_unit = sys.argv[3]
+    if category == 'length':
+        to_unit = input('Enter the unit to convert to: ')
+        result = convert_length(value, from_unit, to_unit)
+        if result is not None:
+            print(f'{value} {from_unit} = {result} {to_unit}')
+        else:
+            print('Conversion not possible')
 
 
-def liters_to_gallons(liters):
-    return liters * 0.264172
-
-def gallons_to_liters(gallons):
-    return gallons / 0.264172
-
-
-def cubic_meters_to_cubic_feet(cubic_meters):
-    return cubic_meters * 35.3147
-
-def cubic_feet_to_cubic_meters(cubic_feet):
-    return cubic_feet / 35.3147
+if __name__ == '__main__':
+    main()
