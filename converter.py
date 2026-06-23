@@ -40,35 +40,22 @@ def lbs_to_kg(lbs):
     return lbs / 2.20462
 
 
-def convert_units():
-    while True:
-        print("Choose conversion type:")
-        print("1. Length")
-        print("2. Weight")
-        print("3. Exit")
-        choice = input("Enter choice (1/2/3): ")
+def celsius_to_fahrenheit(celsius):
+    return (celsius * 9/5) + 32
 
-        if choice == '1':
-            length_choice = input("Convert (1) meters to feet, (2) feet to meters: ")
-            if length_choice == '1':
-                meters = float(input("Enter meters: "))
-                print(f"{meters} meters = {meters_to_feet(meters)} feet")
-            elif length_choice == '2':
-                feet = float(input("Enter feet: "))
-                print(f"{feet} feet = {feet_to_meters(feet)} meters")
-        elif choice == '2':
-            weight_choice = input("Convert (1) kg to lbs, (2) lbs to kg: ")
-            if weight_choice == '1':
-                kg = float(input("Enter kg: "))
-                print(f"{kg} kg = {kg_to_lbs(kg)} lbs")
-            elif weight_choice == '2':
-                lbs = float(input("Enter lbs: "))
-                print(f"{lbs} lbs = {lbs_to_kg(lbs)} kg")
-        elif choice == '3':
-            break
-        else:
-            print("Invalid choice. Please try again.")
+def fahrenheit_to_celsius(fahrenheit):
+    return (fahrenheit - 32) * 5/9
 
 
-if __name__ == '__main__':
-    convert_units()
+def area_acres_to_sqft(acres):
+    return acres * 43560
+
+def area_sqft_to_acres(sqft):
+    return sqft / 43560
+
+
+def speed_mph_to_kph(mph):
+    return mph * 1.60934
+
+def speed_kph_to_mph(kph):
+    return kph / 1.60934
