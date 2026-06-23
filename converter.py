@@ -40,46 +40,22 @@ def lbs_to_kg(lbs):
     return lbs / 2.20462
 
 
-def convert_length(value, from_unit, to_unit):
-    if from_unit == 'meters':
-        if to_unit == 'feet':
-            return meters_to_feet(value)
-        elif to_unit == 'inches':
-            return meters_to_inches(value)
-        elif to_unit == 'cm':
-            return meters_to_cm(value)
-        elif to_unit == 'km':
-            return meters_to_km(value)
-        elif to_unit == 'miles':
-            return meters_to_miles(value)
-    elif from_unit == 'feet':
-        return feet_to_meters(value) if to_unit == 'meters' else None
-    elif from_unit == 'inches':
-        return inches_to_meters(value) if to_unit == 'meters' else None
-    elif from_unit == 'cm':
-        return cm_to_meters(value) if to_unit == 'meters' else None
-    elif from_unit == 'km':
-        return km_to_meters(value) if to_unit == 'meters' else None
-    elif from_unit == 'miles':
-        return miles_to_meters(value) if to_unit == 'meters' else None
+def mps_to_kph(mps):
+    return mps * 3.6
+
+def kph_to_mps(kph):
+    return kph / 3.6
 
 
-def main():
-    import sys
-    if len(sys.argv) != 4:
-        print("Usage: python converter.py <category> <value> <from_unit> <to_unit>")
-        return
-    category = sys.argv[1]
-    value = float(sys.argv[2])
-    from_unit = sys.argv[3]
-    if category == 'length':
-        to_unit = input('Enter the unit to convert to: ')
-        result = convert_length(value, from_unit, to_unit)
-        if result is not None:
-            print(f'{value} {from_unit} = {result} {to_unit}')
-        else:
-            print('Conversion not possible')
+def mph_to_kph(mph):
+    return mph * 1.60934
+
+def kph_to_mph(kph):
+    return kph / 1.60934
 
 
-if __name__ == '__main__':
-    main()
+def knots_to_mps(knots):
+    return knots * 0.514444
+
+def mps_to_knots(mps):
+    return mps / 0.514444
